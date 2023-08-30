@@ -117,9 +117,9 @@ const myChart = new Chart(ctx, grafico);
 
 
 
-let apiCallbase = 'https://api.openweathermap.org/data/2.5/forecast?&units=metric&appid=a16ec826797a1b3e6ede633fa4b92a87';
+let apiCallbase = 'https://api.openweathermap.org/data/2.5/forecast?&units=metric&appid=TUAPIKEY';
 let apiCallURL = "";
-let apiCallWeather = 'https://api.openweathermap.org/data/2.5/weather?&units=metric&appid=a16ec826797a1b3e6ede633fa4b92a87';
+let apiCallWeather = 'https://api.openweathermap.org/data/2.5/weather?&units=metric&appid=TUAPIKEY';
 let datosTemp = document.getElementById('datosTemp')
 
 function apiCall(apiCallbase) {
@@ -180,7 +180,7 @@ function actualizaTodo(lat, lon) {
     var newLatLng = new L.LatLng(lat, lon);
     marker.setLatLng(newLatLng);
 
-    $.getJSON(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=a16ec826797a1b3e6ede633fa4b92a87`, function (weatherData) {
+    $.getJSON(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=TUAPIKEY`, function (weatherData) {
         if (weatherData.hasOwnProperty('name')) {
             var city = weatherData.name;
         } else {
@@ -257,7 +257,7 @@ pintaDatos();
 function displayWeather(lat, lon) {
         const weatherDiv = document.getElementById('weatherDiv');
         weatherDiv.innerHTML = '<h2>PRONÓSTICO-5 DÍAS🥶</h2>';
-        const apiCallWeather = `https://api.openweathermap.org/data/2.5/forecast?lang=es&lat=${lat}&lon=${lon}&units=metric&appid=a16ec826797a1b3e6ede633fa4b92a87`;
+        const apiCallWeather = `https://api.openweathermap.org/data/2.5/forecast?lang=es&lat=${lat}&lon=${lon}&units=metric&appid=TUAPIKEY`;
         fetch(apiCallWeather)
             .then(response => response.json())
             .then(json => {
