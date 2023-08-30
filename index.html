@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./node_modules//chart.js/dist/chart.umd.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+            integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+            crossorigin=""
+        >
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="img/nube.ico" type="image/x-icon">
+        <title>App Climatologica</title>
+    </head>
+    <body>
+        <div class="grid-container">
+            <header class="header">
+                <nav class="navbar">
+                    <div class="animation">
+                        <span style="--i: 1">W</span>
+                        <span style="--i: 2">E</span>
+                        <span style="--i: 3">A</span>
+                        <span style="--i: 4">T</span>
+                        <span style="--i: 5">H</span>
+                        <span style="--i: 6">E</span>
+                        <span style="--i: 7">R</span>
+                        <img src="img/sol.png" alt="Logo" class="logo">
+                    </div>
+                    <ul class="navbar-links">
+                        <li class="navbar-link">
+                            <a href="#datosTemp">Predicción</a>
+                        </li>
+                        <li class="navbar-link">
+                            <a href="#map">Mapas</a>
+                        </li>
+                        <li class="navbar-link">
+                            <a href="https://www.eltiempo.es/" target="_blank">Noticias</a>
+                        </li>
+                        <li class="navbar-link">
+                            <a href="#weatherDiv">Avisos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="card-section">
+                <div class="card-grid">
+                    <div class="card" id="datosTemp">
+                        <div class="icono">
+                            <img
+                                id="icono-animado"
+                                src=""
+                                alt=""
+                                height="80"
+                                width="80"
+                            >
+                        </div>
+                    </div>
+                    <div class="card" id="map"></div>
+                    <div class="card" id="grafico">
+                        <canvas id="chart"></canvas>
+                    </div>
+                    <div id="weatherDiv" class="card">
+                        
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="follow-us">
+                    <p>Síguenos en:</p>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="footer-info">
+                    <img src="img/sol.png" alt="Logo" class="logo">
+                    <div class="sub-links">
+                        <ul>
+                            <li>
+                                <a href="https://www.fmprc.gov.cn/esp/gjhdq/" target="_blank">Regiones del mundo</a>
+                            </li>
+                            <li>
+                                <a href="https://www.meteorologiaenred.com/climogramas.html" target="_blank">Descripción gráficas</a>
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/" target="_blank">Centro de Ayuda</a>
+                            </li>
+                            <li>
+                                <a href="https://www.aemet.es/es/eltiempo/observacion" target="_blank">Nuestros Centros</a>
+                            </li>
+                            <li>
+                                <a href="https://www.aemet.es/es/nota_legal" target="_blank">Términos y condiciones</a>
+                            </li>
+                            <li>
+                                <a href="https://www.aemet.es/es/accesibilidad" target="_blank">Accesibilidad</a>
+                            </li>
+                            <li>
+                                <a href="https://www.aemet.es/es/ayuda" target="_blank">Noticias Legales</a>
+                            </li>
+                            <li>
+                                <a href="https://www.aemet.es/es/enlaces" target="_blank">Enlaces</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="globe-terrestre">
+                        <img src="https://visioncore.es/wp-content/uploads/2016/12/Globo-Terraqueo-Tierra-84970.gif" alt="Globo terrestre 3D">
+                    </div>
+                </div>
+                <hr class="divider">
+                <p class="copyright">WEATHER, Practica Diseño Interfaces, 2023.</p>
+            </footer>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
